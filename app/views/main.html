@@ -1,15 +1,28 @@
 <div ng-app="cardFlipperApp">
+<label><input type="text" ng-model="newUserName" placeholder="User Name"/><button ng-click="addUser(newUserName)">Add</button></label>
+<br/>
+<label><input type="text" ng-model="newAdminName" placeholder="Admin Name"/><button ng-click="addAdmin(newAdminName)">Add</button></label>
+<h3>Admin List</h3>
 <div>
-<ul>
-  <li ng-repeat="current in users">
-    {{current.name}}
-    <input type="checkbox" ng-model="current.checked"/>
-  </li>
-</ul>
-  <pre>
-  {{users | json}}
-  </pre>
+  <ul>
+    <li ng-repeat="currentAdmin in admins">
+      {{currentAdmin.name}}
+      <input type="checkbox" ng-model="currentAdmin.checked"/>
+    </li>
+  </ul>
+</div>
+<h3>User List</h3>
+<div>
+  <ul>
+  <li ng-repeat="currentUser in users">
+      {{currentUser.name}}
+      <input type="checkbox" ng-model="currentUser.checked"/>
+    </li>
+  </ul>
+</div>
+<div>
   <pre>
   {{currentSelected | json}}
   </pre>
+</div>
 </div>
